@@ -9,6 +9,8 @@ class sudoku_game():
             self.__gameboard[move[0], move[1]] = move[2]
 
     def __main_loop():
-        
-
-    
+        while True:
+            if __legal_moves == 0:
+                print("You Won!")
+            else: 
+                make_move()
