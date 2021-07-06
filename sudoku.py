@@ -18,86 +18,95 @@ class sudoku_game():
                         game[row][column] = move
                         break
 
-    def legal_move(game, row, column, move):
-        if move not in game[row-1]: # check the row
-            if move not in [game[num-1][row] for num in row]: # check the column
-                if row <= 2:
+def legal_move(game, row, column, move):
 
-                    if column <= 2:
-                        sudoku_square = [i[0:3] for i in game]
-                        sudoku_square = [inner for outer in sudoku_square for inner in outer]
-                        if move not in sudoku_square: # check the square
-                            return True
-                        else:
-                            return False
+    if move not in game[row-1]: # check the row
 
-                    if column <= 5:
-                        sudoku_square = [i[0:3] for i in game]
-                        sudoku_square = [inner for outer in sudoku_square for inner in outer]
-                        if move not in sudoku_square: # check the square
-                            return True
-                        else:
-                            return False
+        if move not in [game[num-1][row] for num in game[row]]: # check the column
 
-                    if column <= 8:
-                        sudoku_square = [i[0:3] for i in game]
-                        sudoku_square = [inner for outer in sudoku_square for inner in outer]
-                        if move not in sudoku_square: # check the square
-                            return True
-                        else:
-                            return False
+            if row <= 2:
 
-                if row <= 5:
+                if column <= 2:
+                    sudoku_square = [i[0:3] for i in game]
+                    sudoku_square = [inner for outer in sudoku_square for inner in outer]
+                    if move not in sudoku_square: # check the square
+                        return True
+                    else:
+                        return False
 
-                    if column <= 2:
-                        sudoku_square = [i[0:3] for i in game]
-                        sudoku_square = [inner for outer in sudoku_square for inner in outer]
-                        if move not in sudoku_square: # check the square
-                            return True
-                        else:
-                            return False
+                if column <= 5:
+                    sudoku_square = [i[0:3] for i in game]
+                    sudoku_square = [inner for outer in sudoku_square for inner in outer]
+                    if move not in sudoku_square: # check the square
+                        return True
+                    else:
+                        return False
 
-                    if column <= 5:
-                        sudoku_square = [i[0:3] for i in game]
-                        sudoku_square = [inner for outer in sudoku_square for inner in outer]
-                        if move not in sudoku_square: # check the square
-                            return True
-                        else:
-                            return False
+                if column <= 8:
+                    sudoku_square = [i[0:3] for i in game]
+                    sudoku_square = [inner for outer in sudoku_square for inner in outer]
+                    if move not in sudoku_square: # check the square
+                        return True
+                    else:
+                        return False
 
-                    if column <= 8:
-                        sudoku_square = [i[0:3] for i in game]
-                        sudoku_square = [inner for outer in sudoku_square for inner in outer]
-                        if move not in sudoku_square: # check the square
-                            return True
-                        else:
-                            return False
+            if row <= 5:
 
-                if row <= 8:
+                if column <= 2:
+                    sudoku_square = [i[0:3] for i in game]
+                    sudoku_square = [inner for outer in sudoku_square for inner in outer]
+                    if move not in sudoku_square: # check the square
+                        return True
+                    else:
+                        return False
 
-                    if column <= 2:
-                        sudoku_square = [i[0:3] for i in game]
-                        sudoku_square = [inner for outer in sudoku_square for inner in outer]
-                        if move not in sudoku_square: # check the square
-                            return True
-                        else:
-                            return False
+                if column <= 5:
+                    sudoku_square = [i[0:3] for i in game]
+                    sudoku_square = [inner for outer in sudoku_square for inner in outer]
+                    if move not in sudoku_square: # check the square
+                        return True
+                    else:
+                        return False
 
-                    if column <= 5:
-                        sudoku_square = [i[0:3] for i in game]
-                        sudoku_square = [inner for outer in sudoku_square for inner in outer]
-                        if move not in sudoku_square: # check the square
-                            return True
-                        else:
-                            return False
+                if column <= 8:
+                    sudoku_square = [i[0:3] for i in game]
+                    sudoku_square = [inner for outer in sudoku_square for inner in outer]
+                    if move not in sudoku_square: # check the square
+                        return True
+                    else:
+                        return False
 
-                    if column <= 8:
-                        sudoku_square = [i[0:3] for i in game]
-                        sudoku_square = [inner for outer in sudoku_square for inner in outer]
-                        if move not in sudoku_square: # check the square
-                            return True
-                        else:
-                            return False
+            if row <= 8:
+
+                if column <= 2:
+                    sudoku_square = [i[0:3] for i in game]
+                    sudoku_square = [inner for outer in sudoku_square for inner in outer]
+                    if move not in sudoku_square: # check the square
+                        return True
+                    else:
+                        return False
+
+                if column <= 5:
+                    sudoku_square = [i[0:3] for i in game]
+                    sudoku_square = [inner for outer in sudoku_square for inner in outer]
+                    if move not in sudoku_square: # check the square
+                        return True
+                    else:
+                        return False
+
+                if column <= 8:
+                    sudoku_square = [i[0:3] for i in game]
+                    sudoku_square = [inner for outer in sudoku_square for inner in outer]
+                    if move not in sudoku_square: # check the square
+                        return True
+                    else:
+                        return False
+
+        else: 
+            return False
+    
+    else:
+        return False
 
     def __main_loop():
         while True:
