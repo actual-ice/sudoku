@@ -17,6 +17,7 @@ class sudoku_game():
                     if legal_move(game, row, column, move):
                         game[row][column] = move
                         break
+        return game
 
     def legal_move(game, row, column, move):
         """
