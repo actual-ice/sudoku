@@ -1,3 +1,5 @@
+from random import shuffle
+
 class sudoku_game():
     def __init__(self):
         self.__gameboard = random_game() # generate a list of numbers for a valid sudoku game
@@ -11,12 +13,19 @@ class sudoku_game():
     def random_game():
         moves = [1,2,3,4,5,6,7,8,9]
         game = [[0, 0, 0, 0, 0, 0, 0, 0, 0] for _ in range(9)]
+        
         for row in range(len(game)):
+            shuffle(moves) # shuffle the order of the moves to randomize
+            
             for column in range(len(game[row])):
                 for move in moves:
                     if legal_move(game, row, column, move):
                         game[row][column] = move
+                        moves.remove(move) # remove the moves already made
                         break
+            
+            moves = [1,2,3,4,5,6,7,8,9] # form the moves list again for the next row
+
         return game
 
     def legal_move(game, row, column, move):
